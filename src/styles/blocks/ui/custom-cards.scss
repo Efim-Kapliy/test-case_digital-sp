@@ -1,0 +1,42 @@
+@use '../../base/mixins' as *;
+
+.custom-cards {
+  margin-top: 86px;
+  @include tablet {
+    margin-top: 76px;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .card {
+    @include mobile {
+      &-title {
+        font-size: 1.15rem;
+      }
+
+      &-text {
+        line-height: normal;
+        font-size: 0.9rem;
+        letter-spacing: normal;
+        margin-bottom: 1rem;
+      }
+
+      &-body {
+        @include mobile {
+          padding: 0.9rem;
+        }
+      }
+    }
+  }
+
+  .btn-primary {
+    width: 100%;
+    @include mobile {
+      font-size: 0.7rem;
+    }
+  }
+}

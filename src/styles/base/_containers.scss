@@ -1,0 +1,31 @@
+@use './mixins' as *;
+
+/* Контейнеры */
+.container {
+  --container-width: 1920px;
+  --container-padding: 120px;
+
+  @include desktop() {
+    --container-width: 100%;
+    --container-padding: 60px;
+  }
+
+  @include laptop {
+    --container-padding: 40px;
+  }
+
+  @include tablet {
+    --container-padding: 40px;
+  }
+
+  @include mobile {
+    --container-padding: 20px;
+  }
+
+  & {
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+    max-width: var(--container-width);
+    width: 100%;
+  }
+}
